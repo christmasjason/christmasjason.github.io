@@ -8,16 +8,23 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>
     
-    Archives |
+    Android RecyclerView 顶部悬浮实现 |
     
     王刚的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="王刚的博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="上图: 本文代码的Github地址 思路: 每一个RecyclerView的item的布局(下文叫itemUI)里面都包含“吸顶文本”这个布局(下文叫StickyLayout)，根据当前itemA和上一个itemB的吸顶信息是否相同，决定是否展示itemA的StickyLayout.  包含RecyclerView的布局(下文叫wrapperUI)最上部分，有一个假的StickyLayout(下文">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android RecyclerView 顶部悬浮实现">
+<meta property="og:url" content="http://yoursite.com/2016/06/23/Android RecyclerView 顶部悬浮实现/index.html">
 <meta property="og:site_name" content="王刚的博客">
+<meta property="og:description" content="上图: 本文代码的Github地址 思路: 每一个RecyclerView的item的布局(下文叫itemUI)里面都包含“吸顶文本”这个布局(下文叫StickyLayout)，根据当前itemA和上一个itemB的吸顶信息是否相同，决定是否展示itemA的StickyLayout.  包含RecyclerView的布局(下文叫wrapperUI)最上部分，有一个假的StickyLayout(下文">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/590988-f037489ad1c8f71f.gif?imageMogr2/auto-orient/strip">
+<meta property="og:updated_time" content="2017-12-14T06:18:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王刚的博客">
+<meta name="twitter:title" content="Android RecyclerView 顶部悬浮实现">
+<meta name="twitter:description" content="上图: 本文代码的Github地址 思路: 每一个RecyclerView的item的布局(下文叫itemUI)里面都包含“吸顶文本”这个布局(下文叫StickyLayout)，根据当前itemA和上一个itemB的吸顶信息是否相同，决定是否展示itemA的StickyLayout.  包含RecyclerView的布局(下文叫wrapperUI)最上部分，有一个假的StickyLayout(下文">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/590988-f037489ad1c8f71f.gif?imageMogr2/auto-orient/strip">
   
   <link rel="alternative" href="/atom.xml" title="王刚的博客" type="application/atom+xml">
   
@@ -163,83 +170,86 @@
                   class="anm-canvas"></canvas>
         </div>
         <div id="js-content" class="content-ll">
-          
-
-
-
-
-
-
-
-<section class="archives-wrap">
-  <div class="archive-year-wrap">
-    <a href="/archives/2016" class="archive-year">2016</a>
-  </div>
-  <div class="archives">
+          <article id="post-Android RecyclerView 顶部悬浮实现"
+         class="article article-type-post " itemscope
+         itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/28/一个属性实现带进度的圆形进度条/" class="archive-article-date">
-  <time datetime="2016-06-28T07:19:46.000Z" itemprop="datePublished"><i
-      class="icon-calendar icon"></i>2016-06-28</time>
-</a>
+    <header class="article-header">
+      
 
-        </div>
-    	 
-
-<h1 itemprop="name">
-  <a class="archive-article-title" href="/2016/06/28/一个属性实现带进度的圆形进度条/">一个属性实现带进度的圆形进度条</a>
+<h1 class="article-title" itemprop="name">
+  Android RecyclerView 顶部悬浮实现
 </h1>
 
 
 
-        <div class="article-info info-on-right">
-          
-<div class="article-tag tagcloud">
-  <i class="icon-price-tags icon"></i>
-  <ul class="article-tag-list">
-    
-    <li class="article-tag-list-item">
-      <a href="javascript:void(0)"
-         class="js-tag article-tag-list-link color3">Android</a>
-    </li>
-    
-  </ul>
-</div>
-
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-    
-
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/23/Android RecyclerView 顶部悬浮实现/" class="archive-article-date">
+      
+      <a href="/2016/06/23/Android RecyclerView 顶部悬浮实现/" class="archive-article-date">
   <time datetime="2016-06-23T11:52:11.000Z" itemprop="datePublished"><i
       class="icon-calendar icon"></i>2016-06-23</time>
 </a>
 
-        </div>
-    	 
+      
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      <h5 id="上图-本文代码的Github地址"><a href="#上图-本文代码的Github地址" class="headerlink" title="上图: 本文代码的Github地址"></a>上图: <a href="https://github.com/christmasjason/StickyHeaderView" target="_blank" rel="noopener">本文代码的Github地址</a></h5><p><img src="http://upload-images.jianshu.io/upload_images/590988-f037489ad1c8f71f.gif?imageMogr2/auto-orient/strip" alt="sticky.gif"></p>
+<h5 id="思路"><a href="#思路" class="headerlink" title="思路:"></a>思路:</h5><ol>
+<li>每一个RecyclerView的item的布局(下文叫itemUI)里面都包含“吸顶文本”这个布局(下文叫StickyLayout)，根据当前itemA和上一个itemB的吸顶信息是否相同，决定是否展示itemA的StickyLayout. </li>
+<li>包含RecyclerView的布局(下文叫wrapperUI)最上部分，有一个假的StickyLayout(下文叫FakeStickyLayout). </li>
+<li>监听RecyclerView的滚动，根据RecyclerView的滚动距离，决定FakeStickyLayout向上或者向下滚动的距离. </li>
+</ol>
+<h5 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h5><ul>
+<li>先说布局: </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">wrapperUI.xml</span><br><span class="line"></span><br><span class="line">&lt;FrameLayout    </span><br><span class="line">      android:layout_width=&quot;match_parent&quot;</span><br><span class="line">      android:layout_height=&quot;match_parent&quot;</span><br><span class="line">      app:layout_behavior=&quot;@string/appbar_scrolling_view_behavior</span><br><span class="line"></span><br><span class="line">    &lt;android.support.v7.widget.RecyclerView</span><br><span class="line">        android:id=&quot;@+id/rv_sticky_example&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;match_parent&quot;</span><br><span class="line">        android:scrollbars=&quot;vertical&quot; /&gt;  </span><br><span class="line"></span><br><span class="line">    &lt;include layout=&quot;@layout/layout_sticky_header_view&quot; /&gt;</span><br><span class="line">&lt;/FrameLayout&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">itemUI.xml</span><br><span class="line"></span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout </span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;   </span><br><span class="line">    xmlns:tools=&quot;http://schemas.android.com/tools&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot; </span><br><span class="line">    android:layout_height=&quot;wrap_content&quot; </span><br><span class="line">    android:layout_marginTop=&quot;1dp&quot;      </span><br><span class="line">    android:orientation=&quot;vertical&quot;&gt;  </span><br><span class="line"></span><br><span class="line">  &lt;include layout=&quot;@layout/layout_sticky_header_view&quot; /&gt;  </span><br><span class="line"></span><br><span class="line">  &lt;RelativeLayout      </span><br><span class="line">    android:id=&quot;@+id/rl_content_wrapper&quot;           ]</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;      </span><br><span class="line">    android:layout_height=&quot;wrap_content&quot;      </span><br><span class="line">    android:layout_marginTop=&quot;1dp&quot;     </span><br><span class="line">    android:padding=&quot;10dp&quot;&gt;    </span><br><span class="line"></span><br><span class="line">  ~~~~~~~</span><br><span class="line"></span><br><span class="line">  &lt;/RelativeLayout&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+<p>这两个布局没什么特别，重点是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;include layout=&quot;@layout/layout_sticky_header_view&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这个include标签引用的布局，就是吸顶的那个布局，保证了itemUI中的StickyLayout和wrapperUI中的FakeStickyLayout的布局一致.</p>
+<ul>
+<li>再说RecyclerView 的 Adapter: </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// RecyclerView 的第一个item，肯定是展示StickyLayout的.</span><br><span class="line">public static final int FIRST_STICKY_VIEW = 1;</span><br><span class="line">// RecyclerView 除了第一个item以外，要展示StickyLayout的.</span><br><span class="line">public static final int HAS_STICKY_VIEW = 2;</span><br><span class="line">// RecyclerView 的不展示StickyLayout的item.</span><br><span class="line">public static final int NONE_STICKY_VIEW = 3;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">if (position == 0) &#123;     </span><br><span class="line">    recyclerViewHolder.tvStickyHeader.setVisibility(View.VISIBLE);        </span><br><span class="line">    recyclerViewHolder.tvStickyHeader.setText(stickyExampleModel.sticky);  </span><br><span class="line"></span><br><span class="line">    // 第一个item的吸顶信息肯定是展示的，并且标记tag为FIRST_STICKY_VIEW</span><br><span class="line">    recyclerViewHolder.itemView.setTag(FIRST_STICKY_VIEW);</span><br><span class="line"></span><br><span class="line">  &#125; else &#123;  </span><br><span class="line">    // 之后的item都会和前一个item要展示的吸顶信息进行比较，不相同就展示，并且标记tag为HAS_STICKY_VIEW</span><br><span class="line">    if (!TextUtils.equals(stickyExampleModel.sticky, stickyExampleModels.get(position - 1).sticky)) &#123;  </span><br><span class="line">      recyclerViewHolder.tvStickyHeader.setVisibility(View.VISIBLE);    </span><br><span class="line">      recyclerViewHolder.tvStickyHeader.setText(stickyExampleModel.sticky);    </span><br><span class="line">      recyclerViewHolder.itemView.setTag(HAS_STICKY_VIEW); </span><br><span class="line"></span><br><span class="line">    &#125; else &#123;       </span><br><span class="line">      // 相同就不展示，并且标记tag为NONE_STICKY_VIEW</span><br><span class="line">      recyclerViewHolder.tvStickyHeader.setVisibility(View.GONE);       </span><br><span class="line">      recyclerViewHolder.itemView.setTag(NONE_STICKY_VIEW);  </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">// ContentDescription 用来记录并获取要吸顶展示的信息</span><br><span class="line">recyclerViewHolder.itemView.setContentDescription(stickyExampleModel.sticky);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>说了半天，重点终于来了</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">rvStickyExample.addOnScrollListener(new RecyclerView.OnScrollListener() &#123;  </span><br><span class="line">    @Override  </span><br><span class="line">    public void onScrolled(RecyclerView recyclerView, int dx, int dy) &#123;    </span><br><span class="line">      super.onScrolled(recyclerView, dx, dy);    </span><br><span class="line"></span><br><span class="line">      // 找到RecyclerView的item中，和RecyclerView的getTop 向下相距5个像素的那个item</span><br><span class="line">      // (尝试2、3个像素位置都找不到，所以干脆用了5个像素)，</span><br><span class="line">      // 我们根据这个item，来更新吸顶布局的内容，</span><br><span class="line">      // 因为我们的StickyLayout展示的信息肯定是最上面的那个item的信息. </span><br><span class="line">      View stickyInfoView = recyclerView.findChildViewUnder(tvStickyHeaderView.getMeasuredWidth() / 2, 5);    </span><br><span class="line">      if (stickyInfoView != null &amp;&amp; stickyInfoView.getContentDescription() != null) &#123;      </span><br><span class="line">          tvStickyHeaderView.setText(String.valueOf(stickyInfoView.getContentDescription()));    </span><br><span class="line">      &#125;    </span><br><span class="line"></span><br><span class="line">      // 找到固定在屏幕上方那个FakeStickyLayout下面一个像素位置的RecyclerView的item，</span><br><span class="line">      // 我们根据这个item来更新假的StickyLayout要translate多少距离. </span><br><span class="line">      // 并且只处理HAS_STICKY_VIEW和NONE_STICKY_VIEW这两种tag，</span><br><span class="line">      // 因为第一个item的StickyLayout虽然展示，但是一定不会引起FakeStickyLayout的滚动. </span><br><span class="line">      View transInfoView = recyclerView.findChildViewUnder(</span><br><span class="line">                         tvStickyHeaderView.getMeasuredWidth() / 2, tvStickyHeaderView.getMeasuredHeight() + 1);    </span><br><span class="line"></span><br><span class="line">      if (transInfoView != null &amp;&amp; transInfoView.getTag() != null) &#123;      </span><br><span class="line">        int transViewStatus = (int) transInfoView.getTag();      </span><br><span class="line">        int dealtY = transInfoView.getTop() - tvStickyHeaderView.getMeasuredHeight();      </span><br><span class="line"></span><br><span class="line">        // 如果当前item需要展示StickyLayout，</span><br><span class="line">        // 那么根据这个item的getTop和FakeStickyLayout的高度相差的距离来滚动FakeStickyLayout. </span><br><span class="line">        // 这里有一处需要注意，如果这个item的getTop已经小于0，也就是滚动出了屏幕，</span><br><span class="line">        // 那么我们就要把假的StickyLayout恢复原位，来覆盖住这个item对应的吸顶信息. </span><br><span class="line">        if (transViewStatus == StickyExampleAdapter.HAS_STICKY_VIEW) &#123;              </span><br><span class="line">          if (transInfoView.getTop() &gt; 0) &#123;          </span><br><span class="line">            tvStickyHeaderView.setTranslationY(dealtY);        </span><br><span class="line">          &#125; else &#123;          </span><br><span class="line">            tvStickyHeaderView.setTranslationY(0);       </span><br><span class="line">          &#125;      </span><br><span class="line">        &#125; else if (transViewStatus == StickyExampleAdapter.NONE_STICKY_VIEW) &#123;        </span><br><span class="line">          // 如果当前item不需要展示StickyLayout，那么就不会引起FakeStickyLayout的滚动. </span><br><span class="line">          tvStickyHeaderView.setTranslationY(0);      </span><br><span class="line">        &#125;    </span><br><span class="line">      &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h5><p><a href="http://www.jianshu.com/p/25b57c849663" target="_blank" rel="noopener">一个属性实现带进度的圆形进度条</a></p>
+<h5 id="写在末尾"><a href="#写在末尾" class="headerlink" title="写在末尾:"></a>写在末尾:</h5><p>本人第一次写博客，如果有不正确的地方欢迎批评指正. </p>
+<p><a href="https://github.com/christmasjason/StickyHeaderView" target="_blank" rel="noopener">https://github.com/christmasjason/StickyHeaderView</a></p>
 
-<h1 itemprop="name">
-  <a class="archive-article-title" href="/2016/06/23/Android RecyclerView 顶部悬浮实现/">Android RecyclerView 顶部悬浮实现</a>
-</h1>
+      
 
-
-
-        <div class="article-info info-on-right">
-          
+      
+      <div class="page-reward">
+        <a href="javascript:;" class="page-reward-btn tooltip-top">
+          <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i><i
+                      class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+        </a>
+      </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 <div class="article-tag tagcloud">
   <i class="icon-price-tags icon"></i>
   <ul class="article-tag-list">
@@ -253,17 +263,104 @@
 </div>
 
 
-          
+      
 
+      
+
+      
+      
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+  <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+  <p>扫一扫，分享到微信</p>
+  <div class="wx-qrcode">
+    <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2016/06/23/Android RecyclerView 顶部悬浮实现/" alt="微信分享二维码">
+  </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-    
-    
-  </div>
-</section>
+
+
+<nav id="article-nav">
+  
+  <a href="/2016/06/28/一个属性实现带进度的圆形进度条/" id="article-nav-newer" class="article-nav-link-wrap">
+    <i class="icon-circle-left"></i>
+    <div class="article-nav-title">
+      
+      一个属性实现带进度的圆形进度条
+      
+    </div>
+  </a>
+  
+  
+</nav>
+
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
 
 
 
@@ -288,8 +385,8 @@
   var yiliaConfig = {
     mathjax: false,
     isHome: false,
-    isPost: false,
-    isArchive: true,
+    isPost: true,
+    isArchive: false,
     isTag: false,
     isCategory: false,
     open_in_new: false,
